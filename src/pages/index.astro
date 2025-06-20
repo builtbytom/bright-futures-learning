@@ -1,5 +1,5 @@
 ---
-
+import '../styles/global.css';
 ---
 
 <html lang="en">
@@ -8,9 +8,23 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Bright Futures Learning Center</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<div class="min-h-screen flex items-center justify-center p-8">
+			<div class="text-center max-w-2xl">
+				<h1 class="text-6xl font-display font-bold text-rainbow mb-6">
+					Bright Futures Learning Center
+				</h1>
+				<p class="text-xl text-gray-700 mb-8">
+					Website under construction. Check back soon for our full site showcasing literacy programs for underserved children!
+				</p>
+				<div class="flex justify-center gap-4">
+					<div class="w-16 h-16 bg-rainbow-red rounded-full animate-bounce-slow"></div>
+					<div class="w-16 h-16 bg-rainbow-yellow rounded-full animate-bounce-slow" style="animation-delay: 0.2s"></div>
+					<div class="w-16 h-16 bg-rainbow-blue rounded-full animate-bounce-slow" style="animation-delay: 0.4s"></div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

@@ -39,8 +39,8 @@ bright-futures-learning/
 7. **Blog/Resources**: Educational content
 
 ## Development Commands
-- `npm run dev`: Run both TinaCMS and Astro dev servers
-- `npm run build`: Build for production
+- `npm run dev`: Run both TinaCMS and Astro dev servers (locally)
+- `npm run build`: Build for production (Astro only - TinaCMS not needed for static builds)
 - `npm run preview`: Preview production build
 
 ## Current Progress
