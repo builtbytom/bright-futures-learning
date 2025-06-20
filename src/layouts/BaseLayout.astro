@@ -1,0 +1,32 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'Bright Futures Learning Center', description = 'Empowering young minds through literacy programs that transform lives.' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <!-- Decorative blobs -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+      <div class="blob w-96 h-96 bg-rainbow-yellow top-0 -right-48"></div>
+      <div class="blob w-96 h-96 bg-rainbow-blue bottom-0 -left-48" style="animation-delay: 2s"></div>
+      <div class="blob w-64 h-64 bg-rainbow-purple top-1/2 left-1/2" style="animation-delay: 4s"></div>
+    </div>
+    
+    <slot />
+  </body>
+</html>

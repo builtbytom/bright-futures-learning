@@ -1,0 +1,44 @@
+---
+import siteSettings from '../content/site-settings/settings.json';
+
+const { navigation } = siteSettings;
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="relative z-10 bg-white/80 backdrop-blur-md shadow-lg sticky top-0">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center space-x-3 group">
+        <div class="w-12 h-12 bg-gradient-to-br from-rainbow-red via-rainbow-yellow to-rainbow-green rounded-full group-hover:animate-wiggle"></div>
+        <span class="font-display text-2xl font-bold text-rainbow">
+          Bright Futures
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        {navigation.map((item) => (
+          <a
+            href={item.href}
+            class={`font-medium transition-colors duration-200 hover:text-rainbow-blue ${
+              currentPath === item.href ? 'text-rainbow-blue wavy' : 'text-gray-700'
+            }`}
+          >
+            {item.label}
+          </a>
+        ))}
+        <a href="/donate" class="btn-primary">
+          Donate Now
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button class="md:hidden p-2 rounded-lg bg-rainbow-yellow/20 hover:bg-rainbow-yellow/30">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>

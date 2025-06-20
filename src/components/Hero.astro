@@ -1,0 +1,66 @@
+---
+import homeData from '../content/homepage/home.json';
+
+const { hero } = homeData;
+---
+
+<section class="relative min-h-[90vh] flex items-center overflow-hidden">
+  <!-- Background pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Text content -->
+      <div class="space-y-8">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight">
+          <span class="text-rainbow">{hero.headline}</span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-gray-700 leading-relaxed">
+          {hero.subheadline}
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href={hero.ctaLink} class="btn-primary text-lg px-8 py-4">
+            {hero.ctaText}
+          </a>
+          <a href="/programs" class="btn-secondary text-lg px-8 py-4">
+            Explore Programs
+          </a>
+        </div>
+
+        <!-- Stats preview -->
+        <div class="flex gap-8 pt-8">
+          <div class="text-center">
+            <div class="text-4xl font-bold text-rainbow-blue">2,347</div>
+            <div class="text-sm text-gray-600">Children Served</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-rainbow-green">94%</div>
+            <div class="text-sm text-gray-600">Reading Improvement</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-rainbow-purple">15K+</div>
+            <div class="text-sm text-gray-600">Books Distributed</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Illustration -->
+      <div class="relative">
+        <div class="relative z-10 hand-drawn bg-gradient-to-br from-rainbow-yellow/20 to-rainbow-blue/20 p-8">
+          <img 
+            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop"
+            alt="Children reading together in a circle"
+            class="rounded-2xl shadow-2xl w-full"
+          />
+        </div>
+        <!-- Decorative elements -->
+        <div class="absolute -top-4 -right-4 w-24 h-24 bg-rainbow-red rounded-full opacity-20 animate-float"></div>
+        <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-rainbow-blue rounded-full opacity-20 animate-float" style="animation-delay: 2s"></div>
+      </div>
+    </div>
+  </div>
+</section>
