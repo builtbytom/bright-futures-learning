@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import { glob } from 'glob';
+import fs from 'fs';
+
+// Read all team member files
+const teamFiles = await glob('src/content/team/*.json');
+const team = teamFiles.map(file => {
+  const content = fs.readFileSync(file, 'utf-8');
+  return JSON.parse(content);
+}).sort((a, b) => a.order - b.order);
+---
+
+<BaseLayout title="About Us - Bright Futures Learning Center">
+  <Navigation />
+  <main>
+    <!-- Hero Section -->
+    <section class="relative py-20 bg-gradient-to-br from-rainbow-indigo/10 to-rainbow-purple/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-5xl md:text-6xl font-display font-bold text-rainbow mb-6">
+          About Bright Futures
+        </h1>
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+          We're a passionate team dedicated to breaking down barriers to literacy and creating opportunities for every child to succeed.
+        </p>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Our Story -->
+          <div class="space-y-6">
+            <h2 class="text-3xl font-display font-bold text-rainbow">Our Story</h2>
+            <div class="prose prose-lg text-gray-700">
+              <p>
+                Bright Futures Learning Center was born from a simple observation: too many children in our community were falling behind in reading, not because they lacked ability, but because they lacked access to quality literacy support.
+              </p>
+              <p>
+                Founded in 2019, we started with just one volunteer tutor and five students meeting in a local library. Today, we've grown to serve over 2,000 children annually, with more than 150 dedicated volunteers making it all possible.
+              </p>
+              <p>
+                Our approach is simple but powerful: meet children where they are, make learning joyful, and never give up on any child. We believe that with the right support, every child can become a confident reader and unlock their full potential.
+              </p>
+            </div>
+          </div>
+
+          <!-- Why It Matters -->
+          <div class="space-y-6">
+            <h2 class="text-3xl font-display font-bold text-rainbow">Why Literacy Matters</h2>
+            <div class="space-y-4">
+              <div class="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-rainbow-red">
+                <h3 class="font-bold text-lg mb-2">The Challenge</h3>
+                <p class="text-gray-700">Two-thirds of children who cannot read proficiently by the end of 4th grade will end up in jail or on welfare.</p>
+              </div>
+              <div class="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-rainbow-yellow">
+                <h3 class="font-bold text-lg mb-2">The Opportunity</h3>
+                <p class="text-gray-700">Children who participate in early literacy programs are 3x more likely to graduate high school and pursue higher education.</p>
+              </div>
+              <div class="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-rainbow-green">
+                <h3 class="font-bold text-lg mb-2">Our Impact</h3>
+                <p class="text-gray-700">94% of our students improve their reading level by at least one grade within 6 months of joining our programs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-display font-bold text-rainbow mb-4">Meet Our Team</h2>
+          <p class="text-xl text-gray-700">The dedicated individuals making literacy accessible to all</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {team.map((member, index) => (
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300">
+              <div class={`h-64 bg-gradient-to-br from-rainbow-${['red', 'green', 'blue'][index]}/20 to-rainbow-${['orange', 'yellow', 'purple'][index]}/20 flex items-center justify-center`}>
+                <div class="w-32 h-32 rounded-full bg-white/50 flex items-center justify-center">
+                  <svg class={`w-20 h-20 text-rainbow-${['red', 'green', 'blue'][index]}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="font-display text-2xl font-bold mb-1">{member.name}</h3>
+                <p class="text-rainbow-blue font-semibold mb-4">{member.role}</p>
+                <p class="text-gray-600 mb-4">{member.bio}</p>
+                <a href={`mailto:${member.email}`} class="text-sm text-rainbow-purple hover:text-rainbow-blue transition-colors">
+                  {member.email}
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Us CTA -->
+    <section class="py-16 bg-gradient-to-r from-rainbow-orange/20 to-rainbow-red/20">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-display font-bold mb-4">Join Our Mission</h2>
+        <p class="text-lg text-gray-700 mb-8">
+          Whether you volunteer, donate, or spread the word, you can help us write more success stories.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="/volunteer" class="btn-primary text-lg px-8 py-4">
+            Become a Volunteer
+          </a>
+          <a href="/donate" class="btn-secondary text-lg px-8 py-4">
+            Support Our Work
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

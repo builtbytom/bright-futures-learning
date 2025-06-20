@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import { glob } from 'glob';
+import fs from 'fs';
+
+// Read all success story files
+const storyFiles = await glob('src/content/success-stories/*.json');
+const stories = storyFiles.map(file => {
+  const content = fs.readFileSync(file, 'utf-8');
+  return JSON.parse(content);
+});
+---
+
+<BaseLayout title="Success Stories - Bright Futures Learning Center">
+  <Navigation />
+  <main>
+    <!-- Hero Section -->
+    <section class="relative py-20 bg-gradient-to-br from-rainbow-purple/10 to-rainbow-pink/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-5xl md:text-6xl font-display font-bold text-rainbow mb-6">
+          Success Stories
+        </h1>
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+          Real stories of transformation. Every child's journey inspires us to do more.
+        </p>
+      </div>
+    </section>
+
+    <!-- Stories Section -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="space-y-20">
+          {stories.map((story, index) => (
+            <article class={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center`}>
+              <!-- Image -->
+              <div class="flex-1">
+                <div class="relative">
+                  <div class={`absolute inset-0 bg-gradient-to-br from-rainbow-${['yellow', 'blue'][index]}/20 to-rainbow-${['orange', 'green'][index]}/20 rounded-3xl transform rotate-3`}></div>
+                  <img 
+                    src={`https://images.unsplash.com/photo-${index === 0 ? '1503676260728-1c00da094a0b' : '1529390138954-48c35adabb97'}?w=600&auto=format&fit=crop`}
+                    alt={story.studentName}
+                    class="relative rounded-3xl shadow-xl w-full"
+                  />
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="flex-1 space-y-6">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-rainbow">
+                  {story.title}
+                </h2>
+                
+                <div class="bg-gradient-to-r from-rainbow-blue/10 to-rainbow-purple/10 rounded-2xl p-6">
+                  <p class="text-lg italic text-gray-700">"{story.quote}"</p>
+                  <p class="mt-2 font-semibold">- {story.studentName}, Age {story.studentAge}</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <!-- Before -->
+                  <div class="bg-red-50 rounded-2xl p-6">
+                    <h3 class="font-display text-xl font-bold text-red-700 mb-2">Before</h3>
+                    <p class="text-gray-700">{story.beforeAfter.before}</p>
+                  </div>
+                  
+                  <!-- After -->
+                  <div class="bg-green-50 rounded-2xl p-6">
+                    <h3 class="font-display text-xl font-bold text-green-700 mb-2">After</h3>
+                    <p class="text-gray-700">{story.beforeAfter.after}</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-2 text-sm">
+                  <span class="px-4 py-2 bg-rainbow-yellow/20 rounded-full font-medium">
+                    {story.program} Graduate
+                  </span>
+                </div>
+
+                <a href={`/stories/${story.slug}`} class="inline-block text-rainbow-blue font-semibold hover:text-rainbow-purple transition-colors">
+                  Read Full Story →
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Reminder -->
+    <section class="py-16 bg-gradient-to-r from-rainbow-green/20 to-rainbow-blue/20">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-display font-bold mb-8">Join Our Success Story</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <div class="text-4xl font-bold text-rainbow-green">94%</div>
+            <div class="text-gray-700">Show Reading Improvement</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-rainbow-blue">1.5 Years</div>
+            <div class="text-gray-700">Average Growth in 6 Months</div>
+          </div>
+          <div>
+            <div class="text-4xl font-bold text-rainbow-purple">100%</div>
+            <div class="text-gray-700">Free for Families</div>
+          </div>
+        </div>
+        <a href="/programs" class="btn-primary text-lg px-8 py-4">
+          Start Your Journey
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

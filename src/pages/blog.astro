@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import { glob } from 'glob';
+import fs from 'fs';
+import matter from 'gray-matter';
+
+// Read all blog files
+const blogFiles = await glob('src/content/blog/*.mdx');
+const posts = blogFiles.map(file => {
+  const content = fs.readFileSync(file, 'utf-8');
+  const { data } = matter(content);
+  return data;
+}).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+// Category colors
+const categoryColors = {
+  education: 'blue',
+  community: 'green',
+  literacy: 'purple',
+  events: 'yellow',
+  resources: 'orange'
+};
+---
+
+<BaseLayout title="Blog - Bright Futures Learning Center">
+  <Navigation />
+  <main>
+    <!-- Hero Section -->
+    <section class="relative py-20 bg-gradient-to-br from-rainbow-green/10 to-rainbow-blue/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-5xl md:text-6xl font-display font-bold text-rainbow mb-6">
+          Learning Resources & News
+        </h1>
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+          Tips, insights, and stories from our literacy community. Discover resources to support reading at home and stay updated on our latest programs.
+        </p>
+      </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Categories -->
+        <div class="flex flex-wrap gap-4 justify-center mb-12">
+          <button class="px-6 py-2 rounded-full bg-rainbow-blue/20 text-rainbow-blue font-medium hover:bg-rainbow-blue hover:text-white transition-all">
+            All Posts
+          </button>
+          {Object.entries(categoryColors).map(([category, color]) => (
+            <button class={`px-6 py-2 rounded-full bg-gray-100 text-gray-700 font-medium hover:bg-rainbow-${color}/20 hover:text-rainbow-${color} transition-all capitalize`}>
+              {category}
+            </button>
+          ))}
+        </div>
+
+        <!-- Posts Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map((post, index) => (
+            <article class="card-rainbow transform hover:scale-105 transition-all duration-300">
+              <div class={`h-48 rounded-2xl mb-6 bg-gradient-to-br from-rainbow-${categoryColors[post.category]}/20 to-rainbow-${categoryColors[post.category]}/10`}>
+                <img 
+                  src={post.featuredImage || `https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop`}
+                  alt={post.title}
+                  class="w-full h-full object-cover rounded-2xl"
+                />
+              </div>
+              
+              <div class="space-y-4">
+                <div class="flex items-center gap-4 text-sm">
+                  <span class={`px-3 py-1 bg-rainbow-${categoryColors[post.category]}/20 text-rainbow-${categoryColors[post.category]} rounded-full font-medium capitalize`}>
+                    {post.category}
+                  </span>
+                  <time class="text-gray-600">
+                    {new Date(post.date).toLocaleDateString('en-US', { 
+                      year: 'numeric', 
+                      month: 'long', 
+                      day: 'numeric' 
+                    })}
+                  </time>
+                </div>
+                
+                <h2 class="font-display text-2xl font-bold hover:text-rainbow-blue transition-colors">
+                  <a href={`/blog/${post.slug}`}>{post.title}</a>
+                </h2>
+                
+                <p class="text-gray-600">{post.excerpt}</p>
+                
+                <div class="flex items-center justify-between pt-4">
+                  <p class="text-sm text-gray-500">By {post.author}</p>
+                  <a href={`/blog/${post.slug}`} class="text-rainbow-blue font-semibold hover:text-rainbow-purple transition-colors">
+                    Read More →
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="py-16 bg-gradient-to-r from-rainbow-purple/20 to-rainbow-pink/20">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-display font-bold mb-4">Stay in the Loop</h2>
+        <p class="text-lg text-gray-700 mb-8">
+          Get the latest literacy tips and program updates delivered to your inbox.
+        </p>
+        <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <input 
+            type="email" 
+            placeholder="Your email address" 
+            class="flex-1 px-6 py-3 rounded-full border-2 border-gray-300 focus:border-rainbow-purple focus:outline-none"
+          />
+          <button type="submit" class="btn-primary">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
