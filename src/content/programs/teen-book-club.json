@@ -1,0 +1,26 @@
+{
+  "title": "Teen Book Club & Writers Workshop",
+  "slug": "teen-book-club",
+  "summary": "A dynamic program for middle schoolers that combines reading diverse literature with creative writing and self-expression.",
+  "description": "Our Teen Book Club & Writers Workshop is designed for students ages 11-14 who are ready to explore literature more deeply and find their own creative voices. This program goes beyond basic literacy to develop critical thinking, cultural awareness, and writing skills.\n\nParticipants read and discuss contemporary young adult literature, classic texts, and works by diverse authors. Book discussions are facilitated by trained volunteers who encourage thoughtful analysis and personal connections to the material.\n\nThe writing workshop component helps teens express themselves through poetry, short stories, journalism, and digital storytelling. Students publish their work in our annual anthology and have opportunities to share at community events.\n\nThis program also includes college prep elements like essay writing, research skills, and SAT vocabulary building.",
+  "ageRange": "11-14 years",
+  "schedule": "Saturdays, 10:00 AM-12:00 PM",
+  "featuredImage": "/images/teen-book-club.jpg",
+  "outcomes": [
+    {
+      "outcome": "Advanced reading comprehension"
+    },
+    {
+      "outcome": "Creative writing skills"
+    },
+    {
+      "outcome": "Critical thinking abilities"
+    },
+    {
+      "outcome": "Public speaking confidence"
+    },
+    {
+      "outcome": "College readiness preparation"
+    }
+  ]
+}

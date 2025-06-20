@@ -1,0 +1,51 @@
+{
+  "siteName": "Bright Futures Learning Center",
+  "siteDescription": "Empowering young minds through literacy programs that transform lives. We believe every child deserves the gift of reading, regardless of their background.",
+  "navigation": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Our Programs",
+      "href": "/programs"
+    },
+    {
+      "label": "Success Stories",
+      "href": "/success-stories"
+    },
+    {
+      "label": "About Us",
+      "href": "/about"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
+      "label": "Get Involved",
+      "href": "/get-involved"
+    }
+  ],
+  "footer": {
+    "copyright": "© 2024 Bright Futures Learning Center. All rights reserved. A 501(c)(3) nonprofit organization.",
+    "socialLinks": [
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/brightfutureslearning"
+      },
+      {
+        "platform": "twitter",
+        "url": "https://twitter.com/brightfuturesLC"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/brightfutureslearning"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://youtube.com/@brightfutureslearning"
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "stats": [
+    {
+      "label": "Children Served",
+      "value": "2,347",
+      "description": "Young minds empowered through our literacy programs since 2019",
+      "icon": "users"
+    },
+    {
+      "label": "Reading Level Improvement",
+      "value": "94%",
+      "description": "Of students improve by at least one grade level within 6 months",
+      "icon": "trending-up"
+    },
+    {
+      "label": "Books Distributed",
+      "value": "15,000+",
+      "description": "Free books given to children to build home libraries",
+      "icon": "book"
+    },
+    {
+      "label": "Volunteer Hours",
+      "value": "50,000",
+      "description": "Dedicated hours from community volunteers making a difference",
+      "icon": "clock"
+    },
+    {
+      "label": "Family Engagement",
+      "value": "87%",
+      "description": "Of parents report reading more with their children at home",
+      "icon": "home"
+    },
+    {
+      "label": "Student Retention",
+      "value": "96%",
+      "description": "Of enrolled students complete their full program",
+      "icon": "award"
+    }
+  ]
+}

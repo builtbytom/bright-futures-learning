@@ -1,47 +1,72 @@
-# Astro Starter Kit: Minimal
+# Bright Futures Learning Center
 
-```sh
-npm create astro@latest -- --template minimal
-```
+A vibrant, psychology-driven nonprofit website built with Astro and TinaCMS. This demo showcases a children's literacy organization with a bright, playful design and completely CMS-editable content.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## 🌈 Features
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **100% CMS-Editable**: Every piece of text managed through TinaCMS
+- **Bright, Playful Design**: Rainbow color palette with hand-drawn elements
+- **Psychology-Driven Content**: Emotional journey from awareness → empathy → hope → action
+- **Mobile-First Responsive**: Works beautifully on all devices
+- **Performance Optimized**: Built with Astro for lightning-fast loading
 
-## 🚀 Project Structure
+## 🚀 Quick Start
 
-Inside of your Astro project, you'll see the following folders and files:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/bright-futures-learning.git
+   cd bright-futures-learning
+   ```
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+   - Site: http://localhost:4321
+   - CMS Admin: http://localhost:4001/admin
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 📦 Tech Stack
 
-## 🧞 Commands
+- **Astro** - Static site generator
+- **TinaCMS** - Git-based content management
+- **Tailwind CSS v3** - Utility-first styling
+- **TypeScript** - Type safety
 
-All commands are run from the root of the project, from a terminal:
+## 🎨 Design System
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- **Colors**: Rainbow palette (red, orange, yellow, green, blue, indigo, purple)
+- **Fonts**: Comic Neue (headings), Inter (body)
+- **Animations**: Float, wiggle, and bounce effects
+- **Shapes**: Organic, hand-drawn borders
 
-## 👀 Want to learn more?
+## 📝 Content Collections
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. **Site Settings** - Global navigation and footer
+2. **Homepage** - Hero, mission, impact sections
+3. **Programs** - Educational programs offered
+4. **Success Stories** - Student testimonials
+5. **Team** - Staff members
+6. **Impact Stats** - Key metrics
+7. **Blog** - Educational resources
+
+## 🚢 Deployment
+
+This site is configured for Netlify deployment:
+
+1. Connect your GitHub repository to Netlify
+2. Build settings are pre-configured in `netlify.toml`
+3. Deploy!
+
+## 📄 License
+
+This is a demo project for portfolio purposes.
+
+---
+
+Built with ❤️ to showcase web development capabilities

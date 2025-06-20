@@ -1,0 +1,39 @@
+{
+  "hero": {
+    "headline": "Every Child Deserves to Read Their Dreams Into Reality",
+    "subheadline": "Join us in transforming young lives through the power of literacy. Together, we're building brighter futures, one story at a time.",
+    "ctaText": "Start Their Journey Today",
+    "ctaLink": "/get-involved",
+    "backgroundImage": "/images/children-reading-circle.jpg"
+  },
+  "mission": {
+    "title": "Our Mission",
+    "content": "At Bright Futures Learning Center, we believe that literacy is the foundation of opportunity. We provide free, engaging reading programs to underserved children aged 4-14, helping them discover the joy of reading while building essential life skills.\n\nEvery book opened is a door to possibility. Every word learned is a step toward independence. Every story shared builds confidence that lasts a lifetime.",
+    "values": [
+      {
+        "title": "Inclusivity",
+        "description": "Every child is welcome here, regardless of background, ability, or circumstance.",
+        "icon": "heart"
+      },
+      {
+        "title": "Joy in Learning",
+        "description": "We make reading fun through games, activities, and celebrations of progress.",
+        "icon": "star"
+      },
+      {
+        "title": "Community",
+        "description": "We build strong connections between children, families, and volunteers.",
+        "icon": "users"
+      },
+      {
+        "title": "Empowerment",
+        "description": "We give children the tools they need to write their own success stories.",
+        "icon": "rocket"
+      }
+    ]
+  },
+  "impact": {
+    "title": "See the Change We're Making",
+    "subtitle": "Real stories, real impact, real futures transformed"
+  }
+}

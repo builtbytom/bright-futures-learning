@@ -1,0 +1,26 @@
+{
+  "title": "Early Readers Circle",
+  "slug": "early-readers-circle",
+  "summary": "A magical introduction to reading for our youngest learners, where picture books come alive and every child discovers they're a natural storyteller.",
+  "description": "The Early Readers Circle is where literacy journeys begin! Designed for children ages 4-6, this program combines storytelling, interactive activities, and hands-on learning to build pre-reading skills in a fun, pressure-free environment.\n\nOur trained volunteers use play-based learning techniques to help children develop phonemic awareness, letter recognition, and a love for books. Each session includes story time, songs, crafts, and take-home books to build personal libraries.\n\nParents and caregivers are encouraged to participate, learning techniques to support reading at home. We celebrate every milestone, from recognizing first letters to reading first words!",
+  "ageRange": "4-6 years",
+  "schedule": "Tuesdays & Thursdays, 3:30-4:30 PM",
+  "featuredImage": "/images/early-readers-circle.jpg",
+  "outcomes": [
+    {
+      "outcome": "Letter and sound recognition"
+    },
+    {
+      "outcome": "Basic vocabulary building"
+    },
+    {
+      "outcome": "Story comprehension skills"
+    },
+    {
+      "outcome": "Love for books and reading"
+    },
+    {
+      "outcome": "School readiness preparation"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Reading Champions",
+  "slug": "reading-champions",
+  "summary": "An intensive literacy program for elementary students who need extra support to reach grade-level reading proficiency.",
+  "description": "Reading Champions provides targeted support for children ages 7-10 who are reading below grade level. Through one-on-one tutoring and small group sessions, we help students overcome reading challenges and build confidence.\n\nOur evidence-based curriculum focuses on phonics, fluency, vocabulary, and comprehension. Each child receives a personalized learning plan based on their specific needs and learning style. We use engaging, culturally relevant books and interactive technology to make learning exciting.\n\nThe program includes regular progress assessments, parent communication, and coordination with school teachers to ensure consistent support. Students who complete the program typically gain 1.5 years of reading ability in just 6 months!",
+  "ageRange": "7-10 years",
+  "schedule": "Monday, Wednesday, Friday, 4:00-5:30 PM",
+  "featuredImage": "/images/reading-champions.jpg",
+  "outcomes": [
+    {
+      "outcome": "Grade-level reading proficiency"
+    },
+    {
+      "outcome": "Improved reading speed and accuracy"
+    },
+    {
+      "outcome": "Enhanced vocabulary and comprehension"
+    },
+    {
+      "outcome": "Increased academic confidence"
+    },
+    {
+      "outcome": "Better performance in all subjects"
+    }
+  ]
+}
